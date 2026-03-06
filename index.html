@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feirão de Ofertas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#ff2e63,#ff4f7b,#ff6b8f);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+/* CARD */
+
+.container{
+max-width:420px;
+width:100%;
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(90deg,#ff2e63,#ff4f7b);
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.header h1{
+font-size:40px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+/* CONTENT */
+
+.content{
+padding:30px;
+text-align:center;
+}
+
+.subtitle{
+color:#444;
+font-size:16px;
+margin-bottom:20px;
+}
+
+/* PROGRESS */
+
+.progress-box{
+height:10px;
+background:#eee;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:25px;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#ff2e63,#ff8fab);
+}
+
+/* BENEFITS */
+
+.benefits{
+text-align:left;
+margin-bottom:25px;
+}
+
+.benefits div{
+margin-bottom:10px;
+font-size:15px;
+}
+
+/* BUTTON */
+
+.cta{
+display:block;
+background:linear-gradient(90deg,#ff2e63,#ff4f7b);
+color:white;
+text-decoration:none;
+padding:18px;
+border-radius:12px;
+font-weight:700;
+font-size:18px;
+box-shadow:0 10px 25px rgba(255,0,90,0.4);
+transition:0.3s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+.notice{
+margin-top:15px;
+font-size:12px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>FEIRÃO</h1>
+</div>
+
+<div class="content">
+
+<div class="subtitle">
+Confira as ofertas disponíveis agora.
+</div>
+
+<div class="progress-box">
+<div class="progress" id="progress"></div>
+</div>
+
+<div class="benefits">
+<div>✔ Ofertas especiais disponíveis</div>
+<div>✔ Acesso rápido</div>
+<div>✔ Processo simples</div>
+</div>
+
+<a class="cta" href="https://consultoria-bialima-online2026.netlify.app/">
+VER OFERTAS
+</a>
+
+<div class="notice">
+Você será direcionado para a página de ofertas.
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* BARRA DE PROGRESSO VISUAL */
+
+let p = 0
+const bar = document.getElementById("progress")
+
+setInterval(()=>{
+p++
+bar.style.width = p + "%"
+if(p>=100) p = 0
+},60)
+
+</script>
+
+</body>
+</html>
